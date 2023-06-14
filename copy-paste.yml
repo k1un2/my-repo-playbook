@@ -1,0 +1,13 @@
+--- # copying file
+- hosts: all
+  become: yes
+  user: ansible
+  connection: ssh
+
+
+
+  tasks:
+     - name: copy file
+       copy:
+         src: /home/ansible/myfile
+         dest: /home/ansible

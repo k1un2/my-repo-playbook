@@ -1,0 +1,13 @@
+--- # installing docker
+- hosts: all
+  user: ansible
+  become: yes
+  comnnection: ssh
+
+
+
+  tasks:
+     - name: docker installation
+       yum:
+         name: docker
+         state: present

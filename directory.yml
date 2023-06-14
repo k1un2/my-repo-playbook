@@ -1,0 +1,14 @@
+--- # creating a folder
+- hosts: all
+  become: yes
+  connection: ssh
+  user: ansible
+
+
+
+
+  tasks: 
+     - name: folder creation
+       file:
+         path: /home/ansible/myfolder
+         state: directory

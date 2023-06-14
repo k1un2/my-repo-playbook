@@ -1,0 +1,15 @@
+--- # installing httpd
+- hosts: all
+  user: ansible
+  connection: ssh
+  become: yes
+
+
+
+
+  tasks:
+     - name: installing httpd pkg
+       yum:
+         name: httpd
+         state: present
+         ignore_errors: yes  

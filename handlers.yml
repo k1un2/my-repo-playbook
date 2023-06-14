@@ -1,0 +1,22 @@
+--- # my handlers playbook
+- hosts: all
+  user: ansible
+  become: yes
+  connection: ssh
+
+
+
+  tasks:
+    - name: installing httpd 
+      yum: 
+      name: httpd
+      state: present
+      when: ansible_os_family == "Debian"
+
+
+
+    - name: starting the service
+      service:
+        name: httpd
+        state: started    
+        when: ansible_os_family == "Debian"
